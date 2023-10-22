@@ -13,10 +13,10 @@
             Result = result;
         }
 
-        //public Response(int statusCode)
-        //{
-        //    StatusCode = statusCode;
-        //}
+        public Response(int statusCode)
+        {
+            StatusCode = statusCode;
+        }
 
         public Response(int statusCode, string errorMessage)
         {
@@ -31,10 +31,10 @@
             Result = result;
         }
 
-        //public Response(int statusCode, ResultType result)
-        //{
-        //    StatusCode = statusCode;
-        //    Result = result;
-        //}
+        public Response(int statusCode, ResultType result)
+        {
+            StatusCode = statusCode;
+            Result = result;
+        }
     }
 }

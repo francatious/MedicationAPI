@@ -25,14 +25,29 @@ namespace MedicationAPI.Controllers
         public async Task<IActionResult> CreateMedication(Models.NewMedication medicationToCreate)
         {
             var result = await _medicationBL.CreateMedication(medicationToCreate);
-            return new ObjectResult(result);
+            if (result.StatusCode == 400)
+            {
+                return new BadRequestObjectResult(result);
+            }
+            else
+            {
+                return new ObjectResult(result);
+            }
         }
 
         [HttpDelete("")]
         public async Task<IActionResult> DeleteMedication(int medicationId)
         {
             var result = await _medicationBL.DeleteMedication(medicationId);
-            return new ObjectResult(result);
+            if (result.StatusCode == 400)
+            {
+                return new BadRequestObjectResult(result);
+            }
+            else
+            {
+                return new ObjectResult(result);
+            }
+            
         }
 
 

@@ -55,7 +55,7 @@ namespace MedicationAPI.Business
                 var deletedMedication = await this._medicationRepo.DeleteMedication(medicationId);
                 if (!deletedMedication)
                 {
-                    return new Response<bool>(400, "The medication intended to delete could not be found.");
+                    return new Response<bool>(400, "The medication intended to be deleted could not be found.");
                 }
 
                 return new Response<bool>(deletedMedication);
