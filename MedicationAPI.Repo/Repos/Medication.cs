@@ -29,12 +29,12 @@ namespace MedicationAPI.Repo.Repos
             return _mapper.Map<IEnumerable<Models.Medication>>(dbMedications);
         }
 
-        public async Task<Models.Medication> CreateMedication(Models.NewMedication Medication)
+        public async Task<Models.Medication> CreateMedication(Models.NewMedication medication)
         {
             var newMedication = new DataModels.MedicationDataModels.Medication()
             {
-                Name = Medication.Name,
-                Quantity = Medication.Quantity,
+                Name = medication.Name,
+                Quantity = medication.Quantity,
                 CreationDate = DateTime.Now
             };
 

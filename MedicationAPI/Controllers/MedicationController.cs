@@ -1,4 +1,4 @@
-using MedicationAPI.Repo.Interfaces;
+using MedicationApi.Business.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MedicationAPI.Controllers
@@ -7,31 +7,31 @@ namespace MedicationAPI.Controllers
     [Route("[controller]")]
     public class MedicationController : ControllerBase
     {
-        private readonly MedicationAPI.Repo.Interfaces.IMedication _medicationRepo;
+        private readonly MedicationApi.Business.Interfaces.IMedication _medicationBL;
         
-        public MedicationController(IMedication medicationRepo)
+        public MedicationController(IMedication medicationBL)
         {
-            _medicationRepo = medicationRepo;
+            _medicationBL = medicationBL;
         }
 
         [HttpGet("medications")]
         public async Task<IActionResult> GetMedications()
         {
-            var result = await _medicationRepo.GetMedications();
+            var result = await _medicationBL.GetMedications();
             return new ObjectResult(result);
         }
 
         [HttpPost("")]
         public async Task<IActionResult> CreateMedication(Models.NewMedication medicationToCreate)
         {
-            var result = await _medicationRepo.CreateMedication(medicationToCreate);
+            var result = await _medicationBL.CreateMedication(medicationToCreate);
             return new ObjectResult(result);
         }
 
-        [HttpDelete]
+        [HttpDelete("")]
         public async Task<IActionResult> DeleteMedication(int medicationId)
         {
-            var result = await _medicationRepo.DeleteMedication(medicationId);
+            var result = await _medicationBL.DeleteMedication(medicationId);
             return new ObjectResult(result);
         }
 

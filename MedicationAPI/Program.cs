@@ -31,6 +31,8 @@ builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
 builder.Services.AddScoped<MedicationAPI.Repo.Interfaces.IMedication, MedicationAPI.Repo.Repos.Medication>();
 
+builder.Services.AddScoped<MedicationApi.Business.Interfaces.IMedication, MedicationAPI.Business.Medication>();
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();

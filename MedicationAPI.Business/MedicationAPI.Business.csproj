@@ -7,7 +7,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\MedicationApi.Business.Interfaces\MedicationApi.Business.Interfaces.csproj" />
     <ProjectReference Include="..\MedicationAPI.Models\MedicationAPI.Models.csproj" />
+    <ProjectReference Include="..\MedicationAPI.Repo.Interfaces\MedicationAPI.Repo.Interfaces.csproj" />
   </ItemGroup>
 
 </Project>

@@ -19,6 +19,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\MedicationApi.Business.Interfaces\MedicationApi.Business.Interfaces.csproj" />
+    <ProjectReference Include="..\MedicationAPI.Business\MedicationAPI.Business.csproj" />
     <ProjectReference Include="..\MedicationAPI.Repo.Interfaces\MedicationAPI.Repo.Interfaces.csproj" />
     <ProjectReference Include="..\MedicationAPI.Repo\MedicationAPI.Repo.csproj" />
   </ItemGroup>
